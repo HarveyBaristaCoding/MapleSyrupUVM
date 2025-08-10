@@ -1,0 +1,29 @@
+{
+  "TOP_0": [
+    {
+      "class_name": "my_agent",
+      "uvm_role": "uvm_agent",
+      "random_id": "xGGKkVJk1omIRm6FCo3-O",
+      "uvm_child": [
+        {
+          "class_name": "my_sequencer",
+          "uvm_role": "uvm_sequencer",
+          "random_id": "NqS3HfNrUCSENtNr73Jm1",
+          "uvm_child": "none"
+        },
+        {
+          "class_name": "my_driver",
+          "uvm_role": "uvm_driver",
+          "random_id": "ffKThYv5dqP8r1uhELIsY",
+          "uvm_child": "none"
+        },
+        {
+          "class_name": "my_monitor",
+          "uvm_role": "uvm_monitor",
+          "random_id": "NJoAtVPyDYLaorC427t3s",
+          "uvm_child": "none"
+        }
+      ]
+    }
+  ]
+}
