@@ -1,26 +1,75 @@
 {
   "TOP_0": [
     {
+      "random_id": "AzknJ-g3D6mv5C8zDP_Vk",
       "class_name": "my_agent",
       "uvm_role": "uvm_agent",
-      "random_id": "xGGKkVJk1omIRm6FCo3-O",
+      "instance_name": "i_agt",
+      "define_func_phase": [
+        "build",
+        "connect",
+        "end_of_elaboration",
+        "final"
+      ],
+      "define_task_phase": [
+        "run"
+      ],
       "uvm_child": [
         {
+          "random_id": "CvEnQNHHA010AfcwFGcYO",
           "class_name": "my_sequencer",
           "uvm_role": "uvm_sequencer",
-          "random_id": "NqS3HfNrUCSENtNr73Jm1",
+          "instance_name": "sqr",
           "uvm_child": "none"
         },
         {
+          "random_id": "JQhegTij0z1vIOxwiW4Wo",
           "class_name": "my_driver",
           "uvm_role": "uvm_driver",
-          "random_id": "ffKThYv5dqP8r1uhELIsY",
-          "uvm_child": "none"
+          "instance_name": "drv",
+          "define_func_phase": [
+            "build",
+            "connect",
+            "report",
+            "final"
+          ],
+          "define_task_phase": [
+            "pre_main",
+            "main",
+            "post_main",
+            "pre_shutdown",
+            "shutdown",
+            "post_shutdown"
+          ],
+          "uvm_child": [
+            {
+              "random_id": "vVu70uWDXJf9SuisTaGz_",
+              "class_name": "my_10",
+              "uvm_role": "uvm_monitor",
+              "instance_name": "mon",
+              "uvm_child": "none"
+            },
+            {
+              "random_id": "bcvtxEmNg9sQdMK5FTEHK",
+              "class_name": "my_11",
+              "uvm_role": "uvm_monitor",
+              "instance_name": "mon",
+              "uvm_child": "none"
+            },
+            {
+              "random_id": "-bam56fSKaRFcU25VfxgA",
+              "class_name": "my_12",
+              "uvm_role": "uvm_monitor",
+              "instance_name": "mon",
+              "uvm_child": "none"
+            }
+          ]
         },
         {
+          "random_id": "-lddgjfMPaCyRqkVGdBtx",
           "class_name": "my_monitor",
           "uvm_role": "uvm_monitor",
-          "random_id": "NJoAtVPyDYLaorC427t3s",
+          "instance_name": "mon",
           "uvm_child": "none"
         }
       ]

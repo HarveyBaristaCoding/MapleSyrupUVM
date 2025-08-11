@@ -12,7 +12,7 @@ function generateShortUUIDs(count) {
   }
   return uuids;
 }
-const random_sid = generateShortUUIDs(4);
+const random_sid = generateShortUUIDs(40);
 
 // UUID
 function generateUUIDs(count) {
@@ -22,32 +22,88 @@ function generateUUIDs(count) {
   }
   return uuids;
 }
-const random_id = generateUUIDs(4);
+const random_id = generateUUIDs(40);
 
+
+const func_phase = {
+  "define_func_phase": [
+    "build", "connect", "end_of_elaboration", "start_of_simulation",
+    "extract", "check", "report", "final"
+  ]
+}
+const task_phase = {
+  "define_task_phase": [ 
+    "run", 
+    "pre_reset", "reset", "post_reset", 
+    "pre_configure", "configure", "post_configure", 
+    "pre_main", "main", "post_main", 
+    "pre_shutdown", "shutdown", "post_shutdown"
+  ]
+}
 
 // 1. build a structure for UVM in JSON format
 const dataStructure = {
   "TOP_0": [{
+    "random_id": random_sid[0],
     "class_name": "my_agent",
     "uvm_role": "uvm_agent",
-    "random_id": random_sid[0],
+    "instance_name": "i_agt",
+    "define_func_phase": [
+      "build", "connect", "end_of_elaboration", "final"
+    ],
+    "define_task_phase": [ 
+      "run"
+    ],
     "uvm_child": [
       {
+        "random_id": random_sid[1],
         "class_name": "my_sequencer",
         "uvm_role": "uvm_sequencer",
-        "random_id": random_sid[1],
+        "instance_name": "sqr",
         "uvm_child": "none"
       },
       {
+        "random_id": random_sid[2],
         "class_name": "my_driver",
         "uvm_role": "uvm_driver",
-        "random_id": random_sid[2],
-        "uvm_child": "none"
+        "instance_name": "drv",
+        "define_func_phase": [
+          "build", "connect", "report", "final"
+        ],
+        "define_task_phase": [ 
+          "pre_main", "main", "post_main", 
+          "pre_shutdown", "shutdown", "post_shutdown"
+        ],
+        // "uvm_child": "none"
+        "uvm_child": [
+          {
+            "random_id": random_sid[10],
+            "class_name": "my_10",
+            "uvm_role": "uvm_monitor",
+            "instance_name": "mon",
+            "uvm_child": "none"
+          },
+          {
+            "random_id": random_sid[11],
+            "class_name": "my_11",
+            "uvm_role": "uvm_monitor",
+            "instance_name": "mon",
+            "uvm_child": "none"
+          },
+          {
+            "random_id": random_sid[12],
+            "class_name": "my_12",
+            "uvm_role": "uvm_monitor",
+            "instance_name": "mon",
+            "uvm_child": "none"
+          }
+        ]
       },
       {
+        "random_id": random_sid[3],
         "class_name": "my_monitor",
         "uvm_role": "uvm_monitor",
-        "random_id": random_sid[3],
+        "instance_name": "mon",
         "uvm_child": "none"
       }
     ]

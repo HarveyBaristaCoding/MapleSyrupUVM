@@ -1,0 +1,44 @@
+{
+  "TOP_0": [
+    {
+      "class_name": "my_agent",
+      "uvm_role": "uvm_agent",
+      "instance_name": "i_agt",
+      "define_func_phase": [
+        "build", "connect", "end_of_elaboration", "start_of_simulation",
+        "extract", "check", "report", "final"
+      ],
+      "define_task_phase": [ 
+        "run", 
+        "pre_reset", "reset", "post_reset", 
+        "pre_configure", "configure", "post_configure", 
+        "pre_main", "main", "post_main", 
+        "pre_shutdown", "shutdown", "post_shutdown"
+      ],
+      "random_id": "BJubPJjfLeKhtQNGg2oJa",
+      "uvm_child": [
+        {
+          "class_name": "my_sequencer",
+          "uvm_role": "uvm_sequencer",
+          "instance_name": "sqr",
+          "random_id": "mhNHF8eZ7qdQfQ3TF8ygm",
+          "uvm_child": "none"
+        },
+        {
+          "class_name": "my_driver",
+          "uvm_role": "uvm_driver",
+          "instance_name": "drv",
+          "random_id": "0iB3jVrPftRGSdVGq-9jt",
+          "uvm_child": "none"
+        },
+        {
+          "class_name": "my_monitor",
+          "uvm_role": "uvm_monitor",
+          "instance_name": "mon",
+          "random_id": "t-56JeI2r5mod1IdJSgSa",
+          "uvm_child": "none"
+        }
+      ]
+    }
+  ]
+}
